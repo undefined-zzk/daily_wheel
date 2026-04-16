@@ -1,0 +1,138 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  display: none;
+}
+
+.modal-overlay.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 13, 26, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.modal-container {
+  position: relative;
+  width: 600rpx;
+  background: #0D0D1A;
+  border: 8rpx solid #FF3AF2;
+  border-radius: 48rpx;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(255, 58, 242, 0.8), 
+              12px 12px 0 #FFE600, 
+              24px 24px 0 #00F5D4;
+  animation: modal-bounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes modal-bounce {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(255, 58, 242, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.modal-header {
+  padding: 60rpx 40rpx 40rpx;
+  text-align: center;
+  border-bottom: 4rpx dashed #7B2FFF;
+}
+
+.modal-title {
+  font-size: 48rpx;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 4rpx;
+  text-shadow: 2px 2px 0px #7B2FFF, 4px 4px 0px #FF3AF2;
+}
+
+.modal-content {
+  padding: 60rpx 40rpx;
+  text-align: center;
+}
+
+.modal-message {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  letter-spacing: 2rpx;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 24rpx;
+  padding: 0 40rpx 60rpx;
+}
+
+.modal-btn {
+  flex: 1;
+  height: 96rpx;
+  border-radius: 9999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 4rpx;
+  text-shadow: 2px 2px 0px #7B2FFF;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 6rpx dashed #7B2FFF;
+  box-shadow: 6px 6px 0 #FF6B35;
+}
+
+.cancel-btn:active {
+  transform: scale(0.95);
+  box-shadow: 3px 3px 0 #FF6B35;
+}
+
+.confirm-btn {
+  background: linear-gradient(90deg, #FF3AF2, #7B2FFF, #00F5D4);
+  background-size: 200% 100%;
+  border: 6rpx solid #FFE600;
+  box-shadow: 0 0 20px rgba(255, 58, 242, 0.6), 6px 6px 0 #FFE600;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.confirm-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px rgba(255, 58, 242, 0.4), 3px 3px 0 #FFE600;
+}

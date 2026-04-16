@@ -1,11 +1,18 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/eat/eat",
+    "pages/play/play",
+    "pages/location/location",
+    "pages/dice/dice"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarBackgroundColor": "#ffffff"
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "日常转盘",
+    "navigationBarBackgroundColor": "#0D0D1A",
+    "navigationStyle": "custom",
+    "backgroundColor": "#0D0D1A",
+    "backgroundTextStyle": "light"
   },
   "style": "v2",
   "componentFramework": "glass-easel",

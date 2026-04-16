@@ -1,0 +1,190 @@
+.container {
+  min-height: 100vh;
+  padding: 40rpx 32rpx 80rpx;
+  position: relative;
+}
+
+/* 大标题 */
+.hero-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24rpx;
+  gap: 20rpx;
+}
+
+.title-text {
+  font-size: 96rpx;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 8rpx;
+  text-shadow: 4px 4px 0px #7B2FFF, 8px 8px 0px #FF3AF2, 12px 12px 0px #00F5D4;
+}
+
+.emoji {
+  font-size: 96rpx;
+}
+
+/* 副标题 */
+.subtitle {
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #FFE600;
+  margin-bottom: 80rpx;
+  text-shadow: 2px 2px 0px #7B2FFF;
+  letter-spacing: 4rpx;
+}
+
+/* 卡片网格 */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40rpx;
+  margin-bottom: 80rpx;
+}
+
+/* 功能卡片 */
+.feature-card {
+  position: relative;
+  background: rgba(45, 27, 78, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 48rpx;
+  padding: 60rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 360rpx;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  overflow: visible;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 48rpx;
+  background-image: radial-gradient(circle, rgba(255, 58, 242, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+/* 卡片边框 */
+.card-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 48rpx;
+  pointer-events: none;
+}
+
+.card-1 {
+  border: 8rpx solid #FF3AF2;
+  box-shadow: 12px 12px 0 #FFE600, 24px 24px 0 #00F5D4;
+}
+
+.card-1 .card-border {
+  border: 8rpx dashed #FFE600;
+}
+
+.card-2 {
+  border: 8rpx solid #00F5D4;
+  box-shadow: 12px 12px 0 #FF6B35, 24px 24px 0 #7B2FFF;
+  transform: translateY(40rpx);
+}
+
+.card-2 .card-border {
+  border: 8rpx solid #FF6B35;
+}
+
+.card-3 {
+  border: 8rpx solid #FFE600;
+  box-shadow: 12px 12px 0 #7B2FFF, 24px 24px 0 #FF3AF2;
+}
+
+.card-3 .card-border {
+  border: 8rpx dashed #7B2FFF;
+}
+
+.card-4 {
+  border: 8rpx solid #FF6B35;
+  box-shadow: 12px 12px 0 #00F5D4, 24px 24px 0 #FFE600;
+  transform: translateY(40rpx);
+}
+
+.card-4 .card-border {
+  border: 8rpx solid #00F5D4;
+}
+
+/* 卡片图标 */
+.card-icon {
+  font-size: 120rpx;
+  margin-bottom: 24rpx;
+  filter: drop-shadow(0 0 20px rgba(255, 58, 242, 0.6));
+}
+
+/* 卡片标题 */
+.card-title {
+  font-size: 44rpx;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 16rpx;
+  text-transform: uppercase;
+  letter-spacing: 4rpx;
+  text-shadow: 2px 2px 0px #7B2FFF, 4px 4px 0px #FF3AF2;
+}
+
+/* 卡片描述 */
+.card-desc {
+  font-size: 24rpx;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 2rpx;
+}
+
+/* 卡片悬停效果 */
+.feature-card:active {
+  transform: scale(0.95) translateY(0);
+  box-shadow: 8px 8px 0 #FFE600, 16px 16px 0 #FF3AF2;
+}
+
+.card-2:active,
+.card-4:active {
+  transform: scale(0.95) translateY(40rpx);
+}
+
+/* 装饰形状 */
+.deco-shape {
+  position: absolute;
+  font-size: 80rpx;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.shape-1 {
+  top: 200rpx;
+  left: 40rpx;
+}
+
+.shape-2 {
+  top: 400rpx;
+  right: 40rpx;
+}
+
+.shape-3 {
+  bottom: 300rpx;
+  left: 60rpx;
+}
+
+.shape-4 {
+  bottom: 500rpx;
+  right: 60rpx;
+}

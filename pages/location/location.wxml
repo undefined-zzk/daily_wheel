@@ -1,0 +1,121 @@
+<nav-bar title="去哪里" showBack="{{true}}"></nav-bar>
+
+<view class="container" style="padding-top: {{navBarHeight + 40}}px;">
+  <!-- 转盘区域 -->
+  <view class="wheel-section">
+    <view class="wheel-container">
+      <!-- 指针在外面，固定不动 -->
+      <view class="wheel-pointer">▼</view>
+      
+      <view class="wheel {{isSpinning ? 'spinning' : ''}}" style="transform: rotate({{rotation}}deg); transition-duration: {{duration}}s;">
+        <view class="wheel-center">
+          <text class="wheel-emoji">📍</text>
+        </view>
+        <view class="wheel-items">
+          <view class="wheel-item" wx:for="{{list}}" wx:key="index" 
+                style="transform: rotate({{index * (360 / list.length)}}deg);">
+            <view class="item-wrapper" style="transform: translateY(-220rpx);">
+              <text class="item-text">{{item}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 结果显示 -->
+  <view class="result-section" wx:if="{{result}}">
+    <view class="result-card animate-pulse-glow">
+      <text class="result-label">今天去</text>
+      <text class="result-text">{{result}}</text>
+      <text class="result-emoji">🎉</text>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons">
+    <view class="btn-primary {{isSpinning || list.length === 0 ? 'btn-disabled' : ''}}" bindtap="startSpin">
+      <text class="btn-text">{{isSpinning ? '转动中...' : list.length === 0 ? '请先添加选项' : '开始转动'}}</text>
+    </view>
+    <view class="btn-secondary {{isSpinning ? 'btn-disabled' : ''}}" bindtap="showManagePanel">
+      <text class="btn-text">管理选项</text>
+    </view>
+    <view class="btn-share" bindtap="shareToFriend" wx:if="{{result}}">
+      <text class="btn-text">分享给朋友</text>
+    </view>
+  </view>
+
+  <!-- 装饰元素 -->
+  <view class="deco-emoji emoji-1 animate-float">✨</view>
+  <view class="deco-emoji emoji-2 animate-wiggle">🗺️</view>
+  <view class="deco-emoji emoji-3 animate-bounce-subtle">🌟</view>
+</view>
+
+<!-- 管理面板 -->
+<view class="manage-panel {{showManage ? 'show' : ''}}" catchtouchmove="true">
+  <view class="panel-mask" bindtap="hideManagePanel"></view>
+  <view class="panel-content">
+    <view class="panel-header">
+      <text class="panel-title">管理选项</text>
+      <view class="close-btn" bindtap="hideManagePanel">✕</view>
+    </view>
+
+    <!-- 添加新项目 -->
+    <view class="add-section">
+      <input class="add-input" placeholder="输入新选项" model:value="{{newItem}}" bindinput="onNewItemInput" bindconfirm="addItem" confirm-type="done" maxlength="10" />
+      <view class="add-btn" bindtap="addItem">添加</view>
+    </view>
+
+    <!-- 数量提示 -->
+    <view class="count-info">
+      <text class="count-text">已添加 {{list.length}}/{{maxItems}} 项</text>
+    </view>
+
+    <!-- 项目列表 -->
+    <scroll-view class="items-list" scroll-y="{{true}}" enable-flex="{{true}}">
+      <view class="list-item" wx:for="{{list}}" wx:key="index">
+        <view wx:if="{{editIndex === index}}" class="edit-mode">
+          <input class="edit-input" value="{{editValue}}" bindinput="onEditInput" />
+          <view class="edit-actions">
+            <view class="save-btn" bindtap="saveEdit">保存</view>
+            <view class="cancel-btn" bindtap="cancelEdit">取消</view>
+          </view>
+        </view>
+        <view wx:else class="view-mode">
+          <text class="item-name">{{item}}</text>
+          <view class="item-actions">
+            <view class="edit-btn" bindtap="startEdit" data-index="{{index}}">编辑</view>
+            <view class="delete-btn" bindtap="deleteItem" data-index="{{index}}">删除</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 重置和清空按钮 -->
+    <view class="bottom-actions">
+      <view class="reset-btn" bindtap="resetToDefault">
+        <text>恢复默认</text>
+      </view>
+      <view class="clear-btn" bindtap="clearAll">
+        <text>清空选项</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 自定义弹框 -->
+<custom-modal 
+  show="{{modalShow}}"
+  title="{{modalTitle}}"
+  message="{{modalMessage}}"
+  showCancel="{{modalShowCancel}}"
+  bind:cancel="onModalCancel"
+  bind:confirm="onModalConfirm"
+/>
+
+<!-- 自定义Toast -->
+<custom-toast 
+  show="{{toastShow}}"
+  message="{{toastMessage}}"
+  type="{{toastType}}"
+/>

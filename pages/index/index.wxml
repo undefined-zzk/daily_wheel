@@ -1,1 +1,53 @@
-<view>app</view>
+<nav-bar title="日常转盘" showBack="{{false}}"></nav-bar>
+
+<view class="container" style="padding-top: {{navBarHeight + 40}}px;">
+  <!-- 大标题 -->
+  <view class="hero-title">
+    <text class="title-text">日常转盘</text>
+    <text class="emoji animate-wiggle">🎯</text>
+  </view>
+  
+  <!-- 副标题 -->
+  <view class="subtitle">让转盘帮你做决定</view>
+
+  <!-- 功能卡片网格 -->
+  <view class="cards-grid">
+    <!-- 吃什么 -->
+    <view class="feature-card card-1 animate-float" bindtap="navigateTo" data-page="eat">
+      <view class="card-icon">🍜</view>
+      <view class="card-title">吃什么</view>
+      <view class="card-desc">转出今天的美食</view>
+      <view class="card-border"></view>
+    </view>
+
+    <!-- 玩什么 -->
+    <view class="feature-card card-2 animate-float-reverse" bindtap="navigateTo" data-page="play">
+      <view class="card-icon">🎮</view>
+      <view class="card-title">玩什么</view>
+      <view class="card-desc">转出娱乐活动</view>
+      <view class="card-border"></view>
+    </view>
+
+    <!-- 去哪里 -->
+    <view class="feature-card card-3 animate-float" bindtap="navigateTo" data-page="location">
+      <view class="card-icon">📍</view>
+      <view class="card-title">去哪里</view>
+      <view class="card-desc">转出目的地</view>
+      <view class="card-border"></view>
+    </view>
+
+    <!-- 抽签 -->
+    <view class="feature-card card-4 animate-float-reverse" bindtap="navigateTo" data-page="dice">
+      <view class="card-icon">🎐</view>
+      <view class="card-title">抽签</view>
+      <view class="card-desc">测测今日运势</view>
+      <view class="card-border"></view>
+    </view>
+  </view>
+
+  <!-- 装饰元素 -->
+  <view class="deco-shape shape-1 animate-spin-slow">✨</view>
+  <view class="deco-shape shape-2 animate-bounce-subtle">💫</view>
+  <view class="deco-shape shape-3 animate-wiggle">⚡</view>
+  <view class="deco-shape shape-4 animate-float">🚀</view>
+</view>

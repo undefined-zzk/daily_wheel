@@ -1,0 +1,46 @@
+<nav-bar title="抽签" showBack="{{true}}"></nav-bar>
+
+<view class="container" style="padding-top: {{navBarHeight + 40}}px;">
+  <!-- 签筒区域 -->
+  <view class="lot-section">
+    <view class="lot-container">
+      <!-- 签筒 -->
+      <view class="lot-box {{isShaking ? 'shaking' : ''}}">
+        <text class="lot-box-emoji">🎐</text>
+      </view>
+      
+      <!-- 飞出的签 -->
+      <view class="lot-stick {{showStick ? 'flying' : ''}}" wx:if="{{showStick}}">
+        <view class="stick-head">
+          <text class="stick-text">{{lotResult.type}}</text>
+        </view>
+        <view class="stick-body"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 结果显示 -->
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card animate-pulse-glow">
+      <text class="result-type">{{lotResult.type}}</text>
+      <text class="result-title">{{lotResult.title}}</text>
+      <text class="result-content">{{lotResult.content}}</text>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons">
+    <view class="btn-primary {{isShaking ? 'btn-disabled' : ''}}" bindtap="drawLot">
+      <text class="btn-text">{{isShaking ? '抽签中...' : '抽签'}}</text>
+    </view>
+    <view class="btn-share" bindtap="shareToFriend" wx:if="{{showResult}}">
+      <text class="btn-text">分享给朋友</text>
+    </view>
+  </view>
+
+  <!-- 装饰元素 -->
+  <view class="deco-emoji emoji-1 animate-float">✨</view>
+  <view class="deco-emoji emoji-2 animate-wiggle">🌟</view>
+  <view class="deco-emoji emoji-3 animate-bounce-subtle">💫</view>
+  <view class="deco-emoji emoji-4 animate-float-reverse">�</view>
+</view>

@@ -1,0 +1,21 @@
+<view class="modal-overlay {{show ? 'show' : ''}}" catchtouchmove="true">
+  <view class="modal-mask" bindtap="onMaskTap"></view>
+  <view class="modal-container">
+    <view class="modal-header">
+      <text class="modal-title">{{title}}</text>
+    </view>
+    
+    <view class="modal-content">
+      <text class="modal-message">{{message}}</text>
+    </view>
+    
+    <view class="modal-footer">
+      <view class="modal-btn cancel-btn" bindtap="onCancel" wx:if="{{showCancel}}">
+        <text>{{cancelText}}</text>
+      </view>
+      <view class="modal-btn confirm-btn" bindtap="onConfirm">
+        <text>{{confirmText}}</text>
+      </view>
+    </view>
+  </view>
+</view>

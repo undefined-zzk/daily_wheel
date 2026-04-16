@@ -1,0 +1,4 @@
+<view class="toast-container {{show ? 'show' : ''}} toast-{{type}}">
+  <view class="toast-icon">{{emoji}}</view>
+  <text class="toast-message">{{message}}</text>
+</view>
