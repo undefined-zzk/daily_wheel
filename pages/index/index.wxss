@@ -123,6 +123,25 @@
   border: 8rpx solid #00F5D4;
 }
 
+.card-5 {
+  border: 8rpx solid #7B2FFF;
+  box-shadow: 12px 12px 0 #FF3AF2, 24px 24px 0 #FFE600;
+}
+
+.card-5 .card-border {
+  border: 8rpx dashed #FF3AF2;
+}
+
+.card-6 {
+  border: 8rpx solid #00F5D4;
+  box-shadow: 12px 12px 0 #FFE600, 24px 24px 0 #FF6B35;
+  transform: translateY(40rpx);
+}
+
+.card-6 .card-border {
+  border: 8rpx dashed #FFE600;
+}
+
 /* 卡片图标 */
 .card-icon {
   font-size: 120rpx;
@@ -187,4 +206,107 @@
 .shape-4 {
   bottom: 500rpx;
   right: 60rpx;
+}
+
+/* 推荐小程序区域 */
+.recommend-section {
+  margin-top: 80rpx;
+  padding: 40rpx 0;
+}
+
+.recommend-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  margin-bottom: 40rpx;
+}
+
+.recommend-text {
+  font-size: 40rpx;
+  font-weight: 900;
+  color: #FFE600;
+  text-shadow: 2px 2px 0px #7B2FFF;
+  letter-spacing: 4rpx;
+}
+
+.recommend-emoji {
+  font-size: 40rpx;
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+.recommend-card {
+  background: rgba(45, 27, 78, 0.9);
+  border: 8rpx solid #FF3AF2;
+  border-radius: 48rpx;
+  padding: 40rpx 48rpx;
+  display: flex;
+  align-items: center;
+  gap: 32rpx;
+  box-shadow: 12px 12px 0 #FFE600, 24px 24px 0 #00F5D4;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+}
+
+.recommend-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 58, 242, 0.1), rgba(0, 245, 212, 0.1));
+  pointer-events: none;
+}
+
+.recommend-card:active {
+  transform: scale(0.98);
+  box-shadow: 8px 8px 0 #FFE600, 16px 16px 0 #00F5D4;
+}
+
+.recommend-icon {
+  font-size: 80rpx;
+  filter: drop-shadow(0 0 20px rgba(255, 230, 0, 0.8));
+  flex-shrink: 0;
+}
+
+.recommend-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.recommend-name {
+  font-size: 36rpx;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 0px #7B2FFF;
+  letter-spacing: 2rpx;
+}
+
+.recommend-desc {
+  font-size: 24rpx;
+  font-weight: 700;
+  color: #00F5D4;
+  letter-spacing: 2rpx;
+}
+
+.recommend-arrow {
+  font-size: 48rpx;
+  font-weight: 900;
+  color: #FFE600;
+  text-shadow: 2px 2px 0px #FF3AF2;
+  flex-shrink: 0;
+  animation: arrow-bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes arrow-bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10rpx);
+  }
 }

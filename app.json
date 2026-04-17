@@ -4,7 +4,9 @@
     "pages/eat/eat",
     "pages/play/play",
     "pages/location/location",
-    "pages/dice/dice"
+    "pages/dice/dice",
+    "pages/exercise/exercise",
+    "pages/drink/drink"
   ],
   "window": {
     "navigationBarTextStyle": "white",

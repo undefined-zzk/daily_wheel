@@ -12,16 +12,32 @@
 
   <!-- 功能卡片网格 -->
   <view class="cards-grid">
+    <!-- 打不打 -->
+    <view class="feature-card card-1 animate-float" bindtap="navigateTo" data-page="exercise">
+      <view class="card-icon">💪</view>
+      <view class="card-title">打不打</view>
+      <view class="card-desc">决定打次数</view>
+      <view class="card-border"></view>
+    </view>
+
     <!-- 吃什么 -->
-    <view class="feature-card card-1 animate-float" bindtap="navigateTo" data-page="eat">
+    <view class="feature-card card-2 animate-float-reverse" bindtap="navigateTo" data-page="eat">
       <view class="card-icon">🍜</view>
       <view class="card-title">吃什么</view>
       <view class="card-desc">转出今天的美食</view>
       <view class="card-border"></view>
     </view>
 
+    <!-- 喝什么 -->
+    <view class="feature-card card-3 animate-float" bindtap="navigateTo" data-page="drink">
+      <view class="card-icon">🥤</view>
+      <view class="card-title">喝什么</view>
+      <view class="card-desc">转出今天的饮品</view>
+      <view class="card-border"></view>
+    </view>
+
     <!-- 玩什么 -->
-    <view class="feature-card card-2 animate-float-reverse" bindtap="navigateTo" data-page="play">
+    <view class="feature-card card-4 animate-float-reverse" bindtap="navigateTo" data-page="play">
       <view class="card-icon">🎮</view>
       <view class="card-title">玩什么</view>
       <view class="card-desc">转出娱乐活动</view>
@@ -29,7 +45,7 @@
     </view>
 
     <!-- 去哪里 -->
-    <view class="feature-card card-3 animate-float" bindtap="navigateTo" data-page="location">
+    <view class="feature-card card-5 animate-float" bindtap="navigateTo" data-page="location">
       <view class="card-icon">📍</view>
       <view class="card-title">去哪里</view>
       <view class="card-desc">转出目的地</view>
@@ -37,7 +53,7 @@
     </view>
 
     <!-- 抽签 -->
-    <view class="feature-card card-4 animate-float-reverse" bindtap="navigateTo" data-page="dice">
+    <view class="feature-card card-6 animate-float-reverse" bindtap="navigateTo" data-page="dice">
       <view class="card-icon">🎐</view>
       <view class="card-title">抽签</view>
       <view class="card-desc">测测今日运势</view>
@@ -50,4 +66,20 @@
   <view class="deco-shape shape-2 animate-bounce-subtle">💫</view>
   <view class="deco-shape shape-3 animate-wiggle">⚡</view>
   <view class="deco-shape shape-4 animate-float">🚀</view>
+
+  <!-- 推荐小程序区域 -->
+  <view class="recommend-section">
+    <view class="recommend-title">
+      <text class="recommend-text">更多好玩的</text>
+      <text class="recommend-emoji">👇</text>
+    </view>
+    <navigator class="recommend-card animate-pulse-glow" target="miniProgram" open-type="navigate" app-id="wxf4512e1d75f7e27c" extra-data="{}" version="release">
+      <view class="recommend-icon">⚡</view>
+      <view class="recommend-content">
+        <view class="recommend-name">反应力测试助手</view>
+        <view class="recommend-desc">测测你的反应速度</view>
+      </view>
+      <view class="recommend-arrow">→</view>
+    </navigator>
+  </view>
 </view>

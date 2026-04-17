@@ -2,7 +2,9 @@
 const STORAGE_KEYS = {
   EAT_LIST: 'eat_list',
   PLAY_LIST: 'play_list',
-  LOCATION_LIST: 'location_list'
+  LOCATION_LIST: 'location_list',
+  EXERCISE_LIST: 'exercise_list',
+  DRINK_LIST: 'drink_list'
 }
 
 // 最大数量限制
@@ -12,7 +14,9 @@ const MAX_ITEMS = 20
 const DEFAULT_DATA = {
   eat: ['火锅', '烧烤', '日料', '川菜', '粤菜', '西餐', '快餐', '面食', '小吃', '自助餐'],
   play: ['看电影', '打游戏', '运动健身', '逛街购物', 'KTV唱歌', '桌游', '密室逃脱', '剧本杀', '看书', '郊游'],
-  location: ['公园', '商场', '咖啡厅', '图书馆', '电影院', '游乐场', '博物馆', '海边', '山上', '老街']
+  location: ['公园', '商场', '咖啡厅', '图书馆', '电影院', '游乐场', '博物馆', '海边', '山上', '老街'],
+  exercise: ['不打', '1次', '2次', '打出血', '10次', '99次', '连续3次', '间隔3次', '一直打', '打晕厥'],
+  drink: ['白开水', '咖啡', '奶茶', '果汁', '可乐', '雪碧', '柠檬水', '酸奶', '豆浆', '茶']
 }
 
 class StorageUtil {
