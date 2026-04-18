@@ -55,6 +55,12 @@
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 
+.wheel-emoji-img {
+  width: 100rpx;
+  height: 100rpx;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
 .wheel-items {
   position: absolute;
   width: 100%;

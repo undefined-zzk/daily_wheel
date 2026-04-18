@@ -9,7 +9,7 @@
       
       <view class="wheel {{isSpinning ? 'spinning' : ''}}" style="transform: rotate({{rotation}}deg); transition-duration: {{duration}}s;">
         <view class="wheel-center">
-          <text class="wheel-emoji">💪</text>
+          <image class="wheel-emoji-img" src="/assets/icons/飞机.svg" mode="aspectFit"></image>
         </view>
         <view class="wheel-items">
           <view class="wheel-item" wx:for="{{list}}" wx:key="index" 
