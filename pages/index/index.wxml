@@ -15,8 +15,8 @@
     <!-- 打不打 -->
     <view class="feature-card card-1 animate-float" bindtap="navigateTo" data-page="exercise">
       <view class="card-icon">💪</view>
-      <view class="card-title">打不打</view>
-      <view class="card-desc">决定打次数</view>
+      <view class="card-title">打不打✈</view>
+      <view class="card-desc">决定打✈次数</view>
       <view class="card-border"></view>
     </view>
 

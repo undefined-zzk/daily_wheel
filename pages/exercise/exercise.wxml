@@ -1,4 +1,4 @@
-<nav-bar title="打不打" showBack="{{true}}"></nav-bar>
+<nav-bar title="打不打✈" showBack="{{true}}"></nav-bar>
 
 <view class="container" style="padding-top: {{navBarHeight + 40}}px;">
   <!-- 转盘区域 -->
@@ -26,7 +26,7 @@
   <!-- 结果显示 -->
   <view class="result-section" wx:if="{{result}}">
     <view class="result-card animate-pulse-glow">
-      <text class="result-label">今天打</text>
+      <text class="result-label">今天打✈</text>
       <text class="result-text">{{result}}</text>
       <text class="result-emoji">🎉</text>
     </view>
