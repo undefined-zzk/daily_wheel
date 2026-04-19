@@ -298,7 +298,7 @@ Page({
     ctx.fillStyle = '#FFFFFF'
     ctx.font = 'bold 70px sans-serif'
     ctx.textAlign = 'center'
-    ctx.fillText('日常转盘 - 打不打', 375, 150)
+    ctx.fillText('日常转盘 - 打不打✈', 375, 150)
     
     // 绘制结果区域背景
     ctx.fillStyle = 'rgba(45, 27, 78, 0.8)'
