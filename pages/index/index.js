@@ -1,16 +1,21 @@
 Page({
   data: {
-    navBarHeight: 0
+    statusBarHeight: 0,
+    safeTopHeight: 0
   },
 
   onLoad() {
-    // 获取导航栏高度
+    // 获取系统信息
     const systemInfo = wx.getSystemInfoSync()
     const statusBarHeight = systemInfo.statusBarHeight || 0
-    const navBarHeight = statusBarHeight + 44
+    const menuButtonInfo = wx.getMenuButtonBoundingClientRect()
+    
+    // 计算安全顶部高度：胶囊按钮底部位置 + 一些间距
+    const safeTopHeight = menuButtonInfo.bottom + 10
     
     this.setData({
-      navBarHeight
+      statusBarHeight,
+      safeTopHeight
     })
   },
 

@@ -37,6 +37,7 @@
   border-radius: 50%;
   text-shadow: 2px 2px 0px #7B2FFF;
   transition: all 0.3s;
+  line-height: 1;
 }
 
 .back-icon:active {

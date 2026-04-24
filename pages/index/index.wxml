@@ -1,6 +1,4 @@
-<nav-bar title="日常转盘" showBack="{{false}}"></nav-bar>
-
-<view class="container" style="padding-top: {{navBarHeight + 40}}px;">
+<view class="container" style="padding-top: {{safeTopHeight}}px;">
   <!-- 大标题 -->
   <view class="hero-title">
     <text class="title-text">日常转盘</text>
