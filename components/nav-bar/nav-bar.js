@@ -12,7 +12,8 @@ Component({
 
   data: {
     statusBarHeight: 0,
-    navBarHeight: 0
+    navBarHeight: 0,
+    isIOS: false
   },
 
   lifetimes: {
@@ -21,10 +22,12 @@ Component({
       const systemInfo = wx.getSystemInfoSync()
       const statusBarHeight = systemInfo.statusBarHeight || 0
       const navBarHeight = statusBarHeight + 44 // 44是导航栏内容高度
+      const isIOS = systemInfo.platform === 'ios'
       
       this.setData({
         statusBarHeight,
-        navBarHeight
+        navBarHeight,
+        isIOS
       })
     }
   },

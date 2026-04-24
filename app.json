@@ -14,7 +14,8 @@
     "navigationBarBackgroundColor": "#0D0D1A",
     "navigationStyle": "custom",
     "backgroundColor": "#0D0D1A",
-    "backgroundTextStyle": "light"
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
   },
   "style": "v2",
   "componentFramework": "glass-easel",

@@ -66,7 +66,7 @@
   <view class="deco-shape shape-4 animate-float">🚀</view>
 
   <!-- 推荐小程序区域 -->
-  <view class="recommend-section">
+  <view class="recommend-section {{recommendVisible ? 'visible' : ''}}">
     <view class="recommend-title">
       <text class="recommend-text">更多好玩的</text>
       <text class="recommend-emoji">👇</text>
