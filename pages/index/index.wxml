@@ -82,8 +82,8 @@
     <navigator class="recommend-card animate-pulse-glow" target="miniProgram" open-type="navigate" app-id="wxe9fb7faea46c25ec" extra-data="{}" version="release">
       <view class="recommend-icon">🎐</view>
       <view class="recommend-content">
-        <view class="recommend-name">木鱼福签</view>
-        <view class="recommend-desc">敲木鱼，求福签</view>
+        <view class="recommend-name">木鱼佳签</view>
+        <view class="recommend-desc">敲木鱼，求佳签</view>
       </view>
       <view class="recommend-arrow">→</view>
     </navigator>
